@@ -1,0 +1,364 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+.loader-wrapper{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(253,202,1);
+}
+#loader {
+  animation: animate 1.5s linear infinite;
+  clip: rect(0, 80px, 80px, 40px);
+  height: 80px;
+  width: 80px;
+  position: absolute;
+  left: calc(50% - 40px);
+  top: calc(50% - 40px);
+}
+@keyframes animate {
+  0% {
+    transform: rotate(0deg)
+  }
+  100% {
+    transform: rotate(220deg)
+  }
+}
+#loader:after {
+  animation: animate2 1.5s ease-in-out infinite;
+  clip: rect(0, 80px, 80px, 40px);
+  content:'';
+  border-radius: 50%;
+  height: 80px;
+  width: 80px;
+  position: absolute;
+}
+@keyframes animate2 {
+  0% {
+    box-shadow: inset #fff 0 0 0 17px;
+    transform: rotate(-140deg);
+  }
+  50% {
+    box-shadow: inset #fff 0 0 0 2px;
+  }
+  100% {
+    box-shadow: inset #fff 0 0 0 17px;
+    transform: rotate(140deg);
+  }
+}
+
+html, body {
+  height:  100vh;
+  width:  100vw;
+  margin:  0 0;
+  display:  flex;
+  align-items:  flex-start;
+  justify-content:  center;
+  place-items: center;
+  font-family: 'Montserrat', sans-serif;
+
+}
+
+a{
+  display: inline-block;
+  text-decoration: none;
+}
+
+.pagina{
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0 0;
+  font-family: 'Montserrat', sans-serif;
+  transition: 0.5s;
+  background-color: white;
+  padding: 50px;
+}
+
+.barra{
+  align-items: center;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.resumen{
+  width: 100%;
+}
+#res{
+  width: 100%;
+  font-size: 20px;
+  overflow: auto;
+  display: flex;
+  flex-direction: row;
+}
+
+.bBarra{
+  font-size: 13px;
+  margin-left: 20px;
+  border-radius: 25px;
+  color: white;
+  display: flex;
+  align-items: center;
+  vertical-align: middle;
+}
+
+#bCarros{
+  background-color: rgb(34,158,246);
+  width: 60px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#bMotos{
+  background-color: rgb(242,49,68);
+  width: 60px;
+  height: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+#bCSesion{
+  display: flex;
+  float: right;
+  color: black;
+  align-items: center;
+  justify-content: center;
+}
+
+.contEst{
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+.stat{
+  height: 260px;
+  width: 280px;
+  background-color: white;
+  margin-top: 20px;
+  border-radius: 20px;
+  border: 4px solid black;
+  margin-right: 20px;
+  padding: 2%;
+}
+
+#comparacion{
+  width: 450px;
+  height: 260px;
+  padding: 2%;
+  margin-right: 0px;
+}
+
+.tt{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  justify-content: space-between;
+}
+
+#fotoMarca{
+  display: flex;
+  height: 100px;
+  width: 100px;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  background-size: cover;
+  background-position: center;
+}
+#fotoModelo{
+  display: flex;
+  height: 100px;
+  width: 200px;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  background-size: cover;
+  background-position: center;
+}
+.tex{
+  display: block;
+  text-align:center;
+  width: 100%;
+  margin-top: 35px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*--------------------------------------------------------------------------------------------*/
+table {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  table-layout: fixed;
+}
+
+table caption {
+  font-size: 1.5em;
+  margin: .5em 0 .75em;
+}
+
+table tr {
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  padding: .35em;
+}
+
+table th,
+table td {
+  padding: .625em;
+  text-align: center;
+}
+
+table th {
+  font-size: .85em;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 600px) {
+  table {
+    border: 0;
+  }
+
+  table caption {
+    font-size: 1.3em;
+  }
+
+  table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+
+  table tr {
+    border-bottom: 3px solid #ddd;
+    display: block;
+    margin-bottom: .625em;
+  }
+
+  table td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: .8em;
+    text-align: right;
+  }
+
+  table td::before {
+    /*
+    * aria-label has no advantage, it won't be read inside a table
+    content: attr(aria-label);
+    */
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  table td:last-child {
+    border-bottom: 0;
+  }
+}
+/*--------------------------------------------------------------------------------------------*/
+@keyframes bake-pie {
+  from {
+    transform: rotate(0deg) translate3d(0,0,0);
+  }
+}
+
+section {
+  margin-top: 30px;
+}
+.pieID {
+  display: inline-block;
+  vertical-align: top;
+}
+.pie {
+  height: 200px;
+  width: 200px;
+  position: relative;
+  margin: 0 30px 30px 0;
+}
+
+.pie::before {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: 1;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  top: 50px;
+  left: 50px;
+}
+.pie::after {
+  content: "";
+  display: block;
+  width: 120px;
+  height: 2px;
+  background: rgba(0,0,0,0.1);
+  border-radius: 50%;
+  box-shadow: 0 0 3px 4px rgba(0,0,0,0.1);
+  margin: 220px auto;
+
+}
+.slice {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  clip: rect(0px, 200px, 200px, 100px);
+  animation: bake-pie 1s;
+}
+.slice span {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: black;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  clip: rect(0px, 200px, 200px, 100px);
+}
+.legend {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  background: #FFF;
+  font-size: 13px;
+
+}
+.legend li {
+  width: 140px;
+  height: 1.25em;
+  margin-bottom: 0.7em;
+  padding-left: 0.5em;
+  border-left: 1.25em solid black;
+}
+.legend em {
+  font-style: normal;
+}
+.legend span {
+  float: right;
+}
+footer {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  font-size: 13px;
+  background: #DDD;
+  padding: 5px 10px;
+  margin: 5px;
+}
+
+/*------------------------------------------------------------------*/

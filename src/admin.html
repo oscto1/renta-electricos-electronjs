@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="admin.css">
+    <script>window.$ = window.jQuery = require('jquery');</script>
+    <script defer src="admin.js"></script>
+    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+    <script type="text/javascript" src="slick/slick.min.js"></script>
+    <title>Administrador</title>
+  </head>
+  <body>
+    <div class="pagina">
+      <div class="resumen">
+        <div class="barra">
+          <div id="res">Resumen
+            <a id="bCarros" class="bBarra" href="#">Carros</a>
+            <a id="bMotos" class="bBarra" href="#">Motos</a>
+            <a id="bCSesion" class="bBarra" href="login.html">Cerrar Sesión</a>
+          </div>
+
+        </div>
+
+          <div class="contEst">
+            <div id="marca" class="stat">
+              <h1 style="font-size: 20px; margin-top:0px; margin-bottom: 0px;">Marca más rentada</h1>
+              <div class="mar">
+                <div id="fotoMarca"></div>
+                <div id="nombreMarca" class="tex"></div>
+              </div>
+            </div>
+            <div id="modelo" class="stat">
+              <h1 style="font-size: 20px; margin-top:0px; margin-bottom: 0px;">Modelo más rentado</h1>
+              <div class="mod">
+                <div id="fotoModelo" ></div>
+                <div id="nombreModelo" class="tex"></div>
+              </div>
+            </div>
+            <div id="comparacion" class="stat">
+                    <h1 style="font-size: 20px; margin-top:0px; margin-bottom: 0px;">Top modelos rentados</h1>
+                    <section>
+                      <div class="pieID pie">
+
+                      </div>
+                      <ul class="pieID legend">
+                        <li>
+                          <em id="nombreV1"></em>
+                          <span id="v1">1</span>
+                        </li>
+                        <li>
+                          <em id="nombreV2"></em>
+                          <span id="v2">1</span>
+                        </li>
+                        <li>
+                          <em id="nombreV3"></em>
+                          <span id="v3">1</span>
+                        </li>
+                        <li>
+                          <em id="nombreV4"></em>
+                          <span id="v4">1</span>
+                        </li>
+                        <li>
+                          <em id="nombreV5"></em>
+                          <span id="v5">1</span>
+                        </li>
+                      </ul>
+                    </section>
+            </div>
+          </div>
+
+
+      </div>
+
+      <div class="clientes">
+
+      </div>
+
+                  <table>
+            <h1 style="font-size:25px; margin-top: 30px;">Clientes</h1>
+            <thead>
+              <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Licencia</th>
+                <th scope="col">Correo electrónico</th>
+                <th scope="col">Edad</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+    </div>
+
+
+    <div class="loader-wrapper"><div id="loader"></div></div>
+  </body>
+</html>

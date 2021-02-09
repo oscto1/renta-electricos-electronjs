@@ -1,0 +1,96 @@
+
+
+/*  Script para la base de datos XAMPP MySQL  */
+/*  Crear la base de datos como root, sin contraseña y en localhost */
+
+create database renta_vehiculos;
+
+use renta_vehiculos;
+
+create table clientes(
+   id_cliente int(11) primary key,
+   nombre varchar(25) not null,
+   edad int not null,
+   correo varchar(60) not null,
+   contraseña varchar(60) not null		
+);
+
+insert into clientes(id_cliente,nombre,edad,correo,contraseña)values(1, "admin", 30, "admin@dom.com", "admin12345");
+
+create table marcacarros(
+   id_marca int primary key,
+   nombre varchar(25) not null,
+   logo varchar(60) not null
+);
+
+insert into marcacarros(id_marca,nombre,logo)values(1,"Tesla","img/tesla-01.png");
+insert into marcacarros(id_marca,nombre,logo)values(2,"BMW","img/bmw-01.png");
+insert into marcacarros(id_marca,nombre,logo)values(3,"Mercedes","img/merc-01.png");
+insert into marcacarros(id_marca,nombre,logo)values(4,"Renault","img/renault-01.png");
+insert into marcacarros(id_marca,nombre,logo)values(5,"KIA","img/kia-01.png");
+
+create table modelocarros(
+   id_carro varchar(5) primary key,
+   modelo varchar(20) not null,
+   autonomia int not null,
+   motor int not null,
+   precio_hora int not null,
+   marca int not null,
+   imagen_p varchar(60) not null,
+   imagen_g varchar(60) not null,
+   vel_max int not null,
+   rentados int not null,
+   foreign key(marca) references marcacarros(id_marca)
+);
+
+insert into modelocarros(id_carro,modelo,autonomia,motor,precio_hora,marca,imagen_p,imagen_g,vel_max,rentados)values("REN01","Twizy",100,5,12000,4,"img/Renault/Twizy-01.png","img/Renault/Twizy_G-01.png",80,0);
+insert into modelocarros(id_carro,modelo,autonomia,motor,precio_hora,marca,imagen_p,imagen_g,vel_max,rentados)values("REN02","Zoe",400,88,15000,4,"img/Renault/Zoe-01.png","img/Renault/Zoe_G-01.png",140,0);
+insert into modelocarros(id_carro,modelo,autonomia,motor,precio_hora,marca,imagen_p,imagen_g,vel_max,rentados)values("REN03","Kangoo ZE",270,60,12000,4,"img/Renault/Kangoo-01.png","img/Renault/Kangoo_G-01.png",130,0);
+insert into modelocarros(id_carro,modelo,autonomia,motor,precio_hora,marca,imagen_p,imagen_g,vel_max,rentados)values("BMW01","i3",180,170,21000,2,"img/BMW/i3-01.png","img/BMW/i3_G-01.png",150,0);
+insert into modelocarros(id_carro,modelo,autonomia,motor,precio_hora,marca,imagen_p,imagen_g,vel_max,rentados)values("KIA01","Soul EV",391,204,22000,5,"img/KIA/SoulEV-01.png","img/KIA/SoulEV_G-01.png",145,0);
+insert into modelocarros(id_carro,modelo,autonomia,motor,precio_hora,marca,imagen_p,imagen_g,vel_max,rentados)values("MER01","EQC",450,408,35000,3,"img/Mercedes/EQC-01.png","img/Mercedes/EQC_G-01.png",280,0);
+insert into modelocarros(id_carro,modelo,autonomia,motor,precio_hora,marca,imagen_p,imagen_g,vel_max,rentados)values("TES01","Model S",629,345,29000,1,"img/tesla/ModelS-01.png","img/tesla/ModelS_G-01.png",261,0);
+insert into modelocarros(id_carro,modelo,autonomia,motor,precio_hora,marca,imagen_p,imagen_g,vel_max,rentados)values("TES02","Model 3",518,515,30000,1,"img/tesla/Model3-01.png","img/tesla/Model3_G-01.png",225,0);
+insert into modelocarros(id_carro,modelo,autonomia,motor,precio_hora,marca,imagen_p,imagen_g,vel_max,rentados)values("TES03","Model X",564,518,34000,1,"img/tesla/ModelX-01.png","img/tesla/ModelX_G-01.png",250,0);
+insert into modelocarros(id_carro,modelo,autonomia,motor,precio_hora,marca,imagen_p,imagen_g,vel_max,rentados)values("TES04","Model Y",509,256,28000,1,"img/tesla/ModelY-01.png","img/tesla/ModelY_G-01.png",241,0);
+
+
+
+
+create table marcamotos(
+   id_marca int primary key,
+   nombre varchar(25) not null,
+   logo varchar(60) not null
+);
+
+insert into marcamotos(id_marca,nombre,logo)values(1,"Super Soco","img/supersoco-01.png");
+insert into marcamotos(id_marca,nombre,logo)values(2,"NIU","img/niu-01.png");
+insert into marcamotos(id_marca,nombre,logo)values(3,"Gogoro","img/gogoro-01.png");
+
+create table modelomotos(
+   id_moto varchar(5) primary key,
+   modelo varchar(20) not null,
+   autonomia int not null,
+   motor double not null,
+   precio_hora double not null,
+   marca int not null,
+   imagen_p varchar(60) not null,
+   imagen_g varchar(60) not null,
+   vel_max int not null,
+   rentadas int not null,
+   foreign key(marca) references marcamotos(id_marca)
+);
+
+insert into modelomotos(id_moto,modelo,autonomia,motor,precio_hora,marca,imagen_p,imagen_g,vel_max,rentadas)values("SSC01","CUx",80,3.6,5000,1,"img/SuperSoco/CUX_G-01.png","img/SuperSoco/CUX-01.png",45,0);
+insert into modelomotos(id_moto,modelo,autonomia,motor,precio_hora,marca,imagen_p,imagen_g,vel_max,rentadas)values("SSC02","TS",80,3.2,5000,1,"img/SuperSoco/TS_G-01.png","img/SuperSoco/TS-01.png",50,0);
+insert into modelomotos(id_moto,modelo,autonomia,motor,precio_hora,marca,imagen_p,imagen_g,vel_max,rentadas)values("SSC03","TC",80,4,7000,1,"img/SuperSoco/TC_G-01.png","img/SuperSoco/TC-01.png",70,0);
+insert into modelomotos(id_moto,modelo,autonomia,motor,precio_hora,marca,imagen_p,imagen_g,vel_max,rentadas)values("SSC04","TC Max",110,6.7,7000,1,"img/SuperSoco/TCMax_G-01.png","img/SuperSoco/TCMax-01.png",100,0);
+insert into modelomotos(id_moto,modelo,autonomia,motor,precio_hora,marca,imagen_p,imagen_g,vel_max,rentadas)values("NIU01","N GT",120,4.6,7000,2,"img/Niu/NGT_G-01.png","img/Niu/NGT-01.png",70,0);
+insert into modelomotos(id_moto,modelo,autonomia,motor,precio_hora,marca,imagen_p,imagen_g,vel_max,rentadas)values("NIU02","M+",90,1.8,5000,2,"img/Niu/M+_G-01.png","img/Niu/M+-01.png",45,0);
+insert into modelomotos(id_moto,modelo,autonomia,motor,precio_hora,marca,imagen_p,imagen_g,vel_max,rentadas)values("NIU03","U GT",85,1.8,7000,2,"img/Niu/U_G-01.png","img/Niu/U-01.png",45,0);
+insert into modelomotos(id_moto,modelo,autonomia,motor,precio_hora,marca,imagen_p,imagen_g,vel_max,rentadas)values("GOG01","S1",120,9.7,8000,3,"img/Gogoro/S1_G-01.png","img/Gogoro/S1-01.png",94,0);
+insert into modelomotos(id_moto,modelo,autonomia,motor,precio_hora,marca,imagen_p,imagen_g,vel_max,rentadas)values("GOG02","S2 Café",110,10.2,8500,3,"img/Gogoro/S2Cafe_G-01.png","img/Gogoro/S2Cafe-01.png",100,0);
+
+
+
+

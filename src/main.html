@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"/>
+    <script>window.$ = window.jQuery = require('jquery');</script>
+    <script defer src="main.js"></script>
+    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+    <script type="text/javascript" src="slick/slick.min.js"></script>
+    <title>Renta de vehículos eléctricos</title>
+  </head>
+  <body>
+
+
+
+      <div class="pagina" id="blur">
+
+          <div class="izq">
+              <span class="texto1">Bienvenido!<br/></span>
+              <span class="texto2">Por favor seleccione un modelo.<br/></span>
+
+              <div class="espec">
+                  <div class="marcaG"></div>
+                  <div id="nombreM"></div>
+                  <span id="precioH"></span>
+                  <div id="fotoG"></div>
+                  <div class="kk">
+                      <div class="datos">
+
+                              <h3 class="dato" id="motor"></h3>
+                              <div class="progress-bar">
+                                <div class="label" id="CV">Motor</div>
+                                <div class="line">
+                                  <span></span>
+                                </div>
+
+                              </div>
+
+                      </div>
+
+                      <div class="datos">
+
+                            <h3 class="dato" id="autonom"></h3>
+                            <div class="progress-bar">
+                              <div class="label" id="Km">Autonomía</div>
+                              <div class="line">
+                                <span></span>
+                              </div>
+
+                            </div>
+
+                      </div>
+
+                      <div class="datos">
+
+                            <h3 class="dato" id="vel_max"></h3>
+                            <div class="progress-bar">
+                              <div class="label" id="KmH">Velocidad Max.</div>
+                              <div class="line">
+                                <span></span>
+                              </div>
+
+                            </div>
+                      </div>
+
+                  </div>
+
+                  <div id="boton_rent" href="#" onclick=toogle()>Rentar</div>
+
+              </div>
+
+
+          </div>
+
+
+
+          <div class="der">
+            <nav role="navigation">
+              <div id="menuToggle">
+  <!--
+  A fake / hidden checkbox is used as click reciever,
+  so you can use the :checked selector on it.
+  -->
+                  <input type="checkbox" />
+
+  <!--
+  Some spans to act as a hamburger.
+
+  They are acting like a real hamburger,
+  not that McDonalds stuff.
+  -->
+                <span></span>
+                <span></span>
+                <span></span>
+
+  <!--
+  Too bad the menu has to be inside of the button
+  but hey, it's pure CSS magic.
+  -->
+                <ul id="menu">
+                  <a href="login.html"><li>Cerrar Sesión</li></a>
+                </ul>
+              </div>
+            </nav>
+
+            <div class="contenido">
+              <div class="tipo">
+                  <div class="botonTipo" id="botCarros">Carros</div>
+                  <div class="botonTipo" id="botMotos">Motos</div>
+              </div>
+
+
+              <div class="slider">
+                  Marca
+
+              </div>
+
+              <div class="slider2">
+                  Modelo
+                  <div class="slider-vertical">
+                    <div class="lista">
+                        <div class="nombre"></div>
+                        <div class="foto" id="foto1"></div>
+                    </div>
+
+              </div>
+
+            </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+      <div id="popup">
+
+            <a id="close" href="#" onclick=toogle()>x</a>
+            <div class="confirmacion">
+
+              <div class="u" id="conf">
+                <span style="font-weight:500">Está a punto de rentar este vehículo:</span>
+                <div id="fotoConf" class="fotoConf"></div>
+                <div class="modelo"></div>
+                <a class="oo" id="bot_confirmar" href="#">Confirmar</a>
+              </div>
+
+              <div class="u" id="exito">
+                <div id="succ" class="fotoConf"></div>
+                <div id="genial">¡Genial!</div>
+                <span style="font-weight:500">Has rentado el vehículo correctamente</span>
+                <a class="oo" id="v" href="#" onclick=toogle()>Volver</a>
+              </div>
+            </div>
+
+
+      </div>
+
+
+      <div class="loader-wrapper"><div id="loader"></div></div>
+      <script type="text/javascript">
+          function toogle(){
+            var blur = document.getElementById('blur');
+            blur.classList.toggle('active');
+            var blur = document.getElementById('popup');
+            blur.classList.toggle('active');
+          }
+      </script>
+  </body>
+</html>
